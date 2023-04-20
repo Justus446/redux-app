@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import './App.css';
+import { connect } from 'react-redux';
+
+
+function App(props) {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+       
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Redux application
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div>
+      <h1>Count: {props.count}</h1>
+      <button onClick={props.increment}>Increment</button>
+      <button onClick={props.decrement}>Decrement</button>
+    </div>
       </header>
+
+
     </div>
   );
 }
 
-export default App;
+
+function mapStateToProps(state) {
+  return {
+    count: state.count
+  };
+}
+
+
+
+function mapDispatchToProps(dispatch) {
+  return {
+    increment: () => dispatch({ type: 'INCREMENT' }),
+    decrement: () => dispatch({ type: 'DECREMENT' })
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps) (App);
