@@ -3,7 +3,7 @@ import './App.css';
 
 import Increment from './Increment';
 import Decrement from './Decrement';
-import store from "./store";
+
 import { useSelector } from 'react-redux';
 
 
