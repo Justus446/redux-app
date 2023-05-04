@@ -3,10 +3,16 @@ import './App.css';
 
 import Increment from './Increment';
 import Decrement from './Decrement';
+import store from "./store";
+import { useSelector } from 'react-redux';
+
 
 
 
 function App() {
+
+  const count = useSelector(state => state.counter);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -15,7 +21,8 @@ function App() {
           Redux application
         </p>
         <div>
-      <h1>Count: </h1>
+      <h1>Counter:{count} </h1>
+      <h1>Count </h1>
       <Increment/>
       <Decrement/>
     </div>

@@ -6,8 +6,10 @@ const initialState = {
   counter: 0
 };
 
-const reducer = (state = initialState, action) => {
+const rootReducer = (state = initialState, action) => {
+
   switch (action.type) {
+
     case INCREMENT_COUNTER:
       return {
         ...state,
@@ -23,4 +25,4 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-export default reducer;
+export default rootReducer;
