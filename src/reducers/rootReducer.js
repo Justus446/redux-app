@@ -1,6 +1,6 @@
 // reducer.js
 
-import { INCREMENT_COUNTER, DECREMENT_COUNTER } from './actionTypes';
+import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../actions/actionTypes';
 
 const initialState = {
   counter: 0
