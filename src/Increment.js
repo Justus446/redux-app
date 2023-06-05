@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from "react-redux";
-import { incrementCounter } from './actions';
+// import { incrementCounter } from './actions';
 
 const Increment = () => {
   const dispatch = useDispatch();
