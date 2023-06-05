@@ -1,22 +1,18 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { incrementCounter} from './actions';
+import { useDispatch } from "react-redux";
+// import { incrementCounter } from './actions';
 
 const Increment = () => {
+  const dispatch = useDispatch();
+
+  const handleIncrement = () => {
+   dispatch(incrementCounter());
+   console.log("clicked....");
+  };
+
   return (
-    <div>
-      <h2>Counter 2: {counter2}</h2>
-      <button onClick={incrementCounter}>Increment</button>
-      
-    </div>
+    <button onClick={handleIncrement}>Increment</button>
   );
 };
 
-
-
-const mapDispatchToProps = dispatch => {
-  return {
-    incrementCounter: () => dispatch(incrementCounter())
-  }
-}
-export default connect(null, mapDispatchToProps)(Increment);
+export default Increment;
